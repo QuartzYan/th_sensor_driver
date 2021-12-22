@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="port" default="/dev/ttyUART_485_422_A"/>
+  <arg name="baudrate" default="4800"/>
+
+  <!-- jx sensor driver -->
+  <node pkg="th_sensor_driver" type="th_sensor_driver" name="th_sensor_driver" output="screen">
+    <param name="sensor_com"   type="string"   value="$(arg port)"/>
+    <param name="baudrate"     type="int"      value="$(arg baudrate)"/>
+  </node>
+  
+</launch>
